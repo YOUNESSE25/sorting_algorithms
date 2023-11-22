@@ -61,8 +61,8 @@ int organisation_bloc(int *array, int h, int l, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
+	if (size < 2)
+		return;
 	if (array)
-	{
 		separ(array, (int)size - 1, 0, size);
-	}
 }
