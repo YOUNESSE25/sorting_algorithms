@@ -13,9 +13,9 @@ void separ(int *array, int h, int l, size_t size)
 
 	if (l < h)
 	{
-		n = organisation_bloc(array, l, h, size);
-		separ(array, l, n - 1, size);
-		separ(array, n + 1, h, size);
+		n = organisation_bloc(array, h, l, size);
+		separ(array, n - 1, l, size);
+		separ(array, h, n + 1, size);
 	}
 }
 
@@ -54,14 +54,15 @@ int organisation_bloc(int *array, int h, int l, size_t size)
 }
 
 /**
- * quick_sort - function that sorts an array of integers in ascending order using the Quick sort algorithm
+ * quick_sort - function that sorts an array of integers
+ * in ascending order using the Quick sort algorithm
  * @array: array sort
  * @size: length of array
  */
 void quick_sort(int *array, size_t size)
 {
-	if (!array || size < 2)
-		return;
-
-	separ(array, 0, (int)size - 1, size);
+	if (array)
+	{
+		separ(array, (int)size - 1, 0, size);
+	}
 }
